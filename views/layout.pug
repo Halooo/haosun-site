@@ -1,0 +1,24 @@
+extends head
+block body
+    #outer
+        header
+            .container
+                .navbar: a(href="/") Hao Sun
+                nav.navbar
+                    ul#nav-reg
+                        li: a(href="/code") Code
+                        li: a(href="/contact") Contact
+                        li: a(href="/photography") Travel
+                    #nav-drop-container
+                        ul#nav-drop(onclick="closeRegNav();")
+                            li: a(href="/code") Code
+                            li: a(href="/contact") Contact
+                            li: a(href="/photography") Travel
+                            a#navlink(href="#", onclick="openNavDrop(); return false;") ...
+        block article
+            article
+                block content
+        footer
+            p &copy; 2016 Hao Sun
+    #overlay
+

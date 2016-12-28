@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .panel-body
+        fieldset
+            .contact
+                label.legend E-mail
+                .content haosun0226#gmail.com (please change # to @)
+                button
+                    a.btn(href="#emailme") email me
+            .contact
+                label.legend Github
+                    .content
+                        a(href="https://github.com/Halooo") GitHub
+            .contact
+                label.legend WeChat
+                .content haosun0226
+        // p(style='padding:1000px')
+        fieldset
+            a#emailme
+            form.form.flex.flexbox(action="/contact", method="POST")
+                input(type="text", name="name", placeholder="Name", value="")
+                input(type="text", name="email", placeholder="Email")
+                input(type="text", name="subject", placeholder="Subject")
+                textarea.flex(name="message", placeholder="Your Message")
+                p(class=error ? 'what' : '')
+                    input(type="submit", value="Send")
+                    if message
+                        span= message
