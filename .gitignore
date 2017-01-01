@@ -8,3 +8,6 @@ npm-debug.log
 .gradle
 local.properties
 .project
+
+# config
+config.json
