@@ -1,2 +1,10 @@
+# node.js
 node_modules
+npm-debug.log
+
+# IDE
 .idea
+.DS_Store
+.gradle
+local.properties
+.project

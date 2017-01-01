@@ -15,15 +15,14 @@ block content
             .contact
                 label.legend WeChat
                 .content haosun0226
-        // p(style='padding:1000px')
         fieldset
             a#emailme
-            form.form.flex.flexbox(action="/contact", method="POST")
+            form.form.flex.flexbox(action="/email", method="POST")
                 input(type="text", name="name", placeholder="Name", value="")
                 input(type="text", name="email", placeholder="Email")
                 input(type="text", name="subject", placeholder="Subject")
                 textarea.flex(name="message", placeholder="Your Message")
-                p(class=error ? 'what' : '')
+                p
                     input(type="submit", value="Send")
                     if message
                         span= message

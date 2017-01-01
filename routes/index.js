@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+/**
+ * Created by hsun on 2016-12-31.
+ */
+let express = require('express'),
+    router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Hao Sun' });
-});
+module.exports = [];
 
-module.exports = router;
+function addRouter(path) {
+    if(typeof require(path) == "object"){
+        console.warn("Warning on loading routes, ",path);
+        return;
+    }
+    module.exports.push(require(path)(router));
+}
+
+addRouter('./home');
+addRouter('./contact');
